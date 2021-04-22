@@ -4,18 +4,27 @@ public class StringCalculator {
             return 0;
         }
         else {
-            String arr[] = text.split(",");
+            String numArr[] = text.split(",");
+            int countOfNumbers = numArr.length;
 
-            if(arr.length == 1) {
+            if(countOfNumbers == 1) {
                 return Integer.parseInt(text);
             }
-            else {
-                int num1 = Integer.parseInt(arr[0]);
-                int num2 = Integer.parseInt(arr[1]);
+            else if(countOfNumbers == 2) {
+                int num1 = Integer.parseInt(numArr[0]);
+                int num2 = Integer.parseInt(numArr[1]);
 
                 return (num1 + num2);
             }
-        }
+            else {
+                int sum = 0;
+                for(int i = 0; i < countOfNumbers; i++) {
+                    int num = Integer.parseInt(numArr[i]);
+                    sum = sum + num;
+                }
 
+                return sum;
+            }
+        }
     }
 }
