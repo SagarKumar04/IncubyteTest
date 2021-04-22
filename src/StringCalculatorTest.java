@@ -3,32 +3,44 @@ import static org.junit.Assert.*;
 
 public class StringCalculatorTest {
     @Test
-    public void shouldReturnZeroOnEmptyString() {
+    public void shouldReturnZeroOnEmptyString() throws Exception {
         assertEquals(0, StringCalculator.add(""));
     }
 
     @Test
-    public void shouldReturnNumberOnReceivingNumber() {
+    public void shouldReturnNumberOnReceivingNumber() throws Exception {
         assertEquals(10, StringCalculator.add("10"));
     }
 
     @Test
-    public void shouldReturnSumOnReceivingTwoNumbers() {
+    public void shouldReturnSumOnReceivingTwoNumbers() throws Exception {
         assertEquals(12, StringCalculator.add("4,8"));
     }
 
     @Test
-    public void shouldReturnSumOnReceivingMoreThanTwoNumbers() {
+    public void shouldReturnSumOnReceivingMoreThanTwoNumbers() throws Exception {
         assertEquals(21, StringCalculator.add("4,8,9"));
     }
 
     @Test
-    public void shouldAcceptNewLineAsValidDelimiter() {
+    public void shouldAcceptNewLineAsValidDelimiter() throws Exception {
         assertEquals(21, StringCalculator.add("4\n8,9"));
     }
 
     @Test
-    public void shouldAcceptDifferentDelimiters() {
+    public void shouldAcceptDifferentDelimiters() throws Exception {
         assertEquals(27, StringCalculator.add("//;\n18;9"));
+    }
+
+    @Test
+    public void shouldThrowErrorIfNegativeNumberIsPassed() {
+        try {
+            StringCalculator.add("4,-8");
+            fail("Should have thrown an exception");
+        }
+        catch(Exception e) {
+            String expectedMessage = "negatives not allowed";
+            assertEquals("Exception message must be correct", expectedMessage, e.getMessage());
+        }
     }
 }
