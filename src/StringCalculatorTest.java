@@ -21,4 +21,9 @@ public class StringCalculatorTest {
     public void shouldReturnSumOnReceivingMoreThanTwoNumbers() {
         assertEquals(21, StringCalculator.add("4,8,9"));
     }
+
+    @Test
+    public void shouldAcceptNewLineAsValidDelimiter() {
+        assertEquals(21, StringCalculator.add("4\n8,9"));
+    }
 }

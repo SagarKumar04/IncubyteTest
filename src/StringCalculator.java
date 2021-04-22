@@ -4,7 +4,7 @@ public class StringCalculator {
             return 0;
         }
         else {
-            String numArr[] = text.split(",");
+            String numArr[] = text.split("[\\W]");
             int countOfNumbers = numArr.length;
 
             if(countOfNumbers == 1) {
