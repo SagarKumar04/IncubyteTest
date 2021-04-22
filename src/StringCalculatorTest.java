@@ -26,4 +26,9 @@ public class StringCalculatorTest {
     public void shouldAcceptNewLineAsValidDelimiter() {
         assertEquals(21, StringCalculator.add("4\n8,9"));
     }
+
+    @Test
+    public void shouldAcceptDifferentDelimiters() {
+        assertEquals(27, StringCalculator.add("//;\n18;9"));
+    }
 }
