@@ -4,7 +4,17 @@ public class StringCalculator {
             return 0;
         }
         else {
-            return Integer.parseInt(text);
+            String arr[] = text.split(",");
+
+            if(arr.length == 1) {
+                return Integer.parseInt(text);
+            }
+            else {
+                int num1 = Integer.parseInt(arr[0]);
+                int num2 = Integer.parseInt(arr[1]);
+
+                return (num1 + num2);
+            }
         }
 
     }

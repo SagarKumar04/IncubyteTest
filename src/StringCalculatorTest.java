@@ -11,4 +11,9 @@ public class StringCalculatorTest {
     public void returnNumberOnReceivingNumber() {
         assertEquals(10, StringCalculator.add("10"));
     }
+
+    @Test
+    public void returnSumOnReceivingTwoNumbers() {
+        assertEquals(12, StringCalculator.add("4,8"));
+    }
 }
