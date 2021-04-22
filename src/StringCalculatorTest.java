@@ -43,4 +43,9 @@ public class StringCalculatorTest {
             assertEquals("Exception message must be correct", expectedMessage, e.getMessage());
         }
     }
+
+    @Test
+    public void shouldIgnoreNumbersGreaterThan1000() throws Exception {
+        assertEquals(2, StringCalculator.add("2,1001"));
+    }
 }

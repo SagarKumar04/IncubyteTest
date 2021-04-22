@@ -19,6 +19,10 @@ public class StringCalculator {
                     for(int i = 0; i < countOfNumbers; i++) {
                         int num = Integer.parseInt(numArr[i]);
 
+                        if(num > 1000) {
+                            num = 0;
+                        }
+
                         sum = sum + num;
                     }
 
@@ -41,11 +45,22 @@ public class StringCalculator {
                         int num1 = Integer.parseInt(numArr[0]);
                         int num2 = Integer.parseInt(numArr[1]);
 
+                        if(num1 > 1000) {
+                            num1 = 0;
+                        }
+                        if(num2 > 1000) {
+                            num2 = 0;
+                        }
+
                         return (num1 + num2);
                     } else {
                         int sum = 0;
                         for (int i = 0; i < countOfNumbers; i++) {
                             int num = Integer.parseInt(numArr[i]);
+
+                            if(num > 1000) {
+                                num = 0;
+                            }
 
                             sum = sum + num;
                         }
